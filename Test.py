@@ -14,15 +14,11 @@ async def scrape_users_and_manage():
         await page.goto("https://trello.com/login")  
          # or snippet around the table
         await page.wait_for_load_state('networkidle')
-        # await page.wait_for_timeout(2000)
         html = await page.content() 
 
-        # await page.wait_for_selector("form", timeout=10000)
         username_sel = locate_selector(html, "username")      
-        # await page.fill('input[id="username-uid1"]', "example@mail.com")
         await page.fill(username_sel, "example@mail.com")
         button_sel = locate_selector(html, "login")
-        # await page.click('button#login-submit')
         await page.click(button_sel)
         await page.wait_for_timeout(3000)
 
@@ -33,9 +29,6 @@ async def scrape_users_and_manage():
         await page.wait_for_timeout(2000)
 
         await page.wait_for_load_state('networkidle')
-        # await page.wait_for_timeout(2000)
-        # await page.wait_for_load_state('networkidle')
-        # await page.wait_for_timeout(2000)
         html = await page.content() 
         print(html)
 
@@ -52,27 +45,6 @@ async def scrape_users_and_manage():
             user_data.append({
                 "name": name
             })
-
-        # for row in member_cards:
-        #     title = await row.get_attribute("title")
-        #     user_data.append({
-        #         "name": title
-        #     })
-
-        # for card in member_cards:
-        #     # find the little div with the title attribute
-        #     photo_div = await card.query_selector('div[title]')
-        #     if not photo_div:
-        #         continue
-        
-        #     title_attr = await photo_div.get_attribute("title")
-
-        #     # extract just the username inside the parentheses
-        #     import re
-        #     m = re.search(r'\(([^)]+)\)', title_attr or "")
-        #     username = m.group(1) if m else title_attr
-
-        #     user_data.append({"username": username})
 
         print(user_data)
         df = pd.DataFrame(user_data)
