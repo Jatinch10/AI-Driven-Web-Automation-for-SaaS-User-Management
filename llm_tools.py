@@ -3,8 +3,6 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from robocorp.browser import page
 from langchain.tools import tool
-# from langchain_openai import ChatOpenAI
-# from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv()
 
