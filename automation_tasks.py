@@ -1,17 +1,12 @@
 import pandas as pd
-# from robocorp.tasks import task
 from robocorp import browser
 from llm_tools import find_element_selector
 from langchain.tools import tool
-# from robocorp.browser import Page
-# from llm_tools import find_robust_selector
-
 
 # Configure browser to be headful for debugging
 browser.configure(
     browser_engine="chrome",
     headless=False,
-    # channel="chrome"
 )
 
 @tool
