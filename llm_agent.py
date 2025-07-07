@@ -29,7 +29,7 @@ def locate_selector(html_snippet: str, target_text: str) -> str:
     Only Return the selector below with no extra snippet, just the selector:
     """
     resp = client.chat.completions.create(
-        model="deepseek/deepseek-chat-v3-0324:free",
+        model="YOUR LLM MODEL",
         messages=[{"role":"user","content":prompt}],
         temperature=0.0
     )
