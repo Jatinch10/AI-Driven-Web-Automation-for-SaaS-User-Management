@@ -45,7 +45,7 @@ def find_element_selector(target_element_description: str) -> str:
     """
     try:
         resp = client.chat.completions.create(
-            model="deepseek/deepseek-chat-v3-0324:free", # Using the coder model can be more reliable for this
+            model="YOUR LLM MODEL", # Using the coder model can be more reliable for this
             messages=[{"role": "user", "content": prompt}],
             temperature=0.0
         )
