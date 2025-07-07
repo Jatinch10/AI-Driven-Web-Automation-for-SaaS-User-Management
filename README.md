@@ -17,8 +17,6 @@ This repository contains two phases of development:
 
   ```dotenv
   OPENROUTER_API_KEY=your_openrouter_key
-  TRELLO_USERNAME=you@example.com
-  TRELLO_PASSWORD=YourPassword
   ```
 * **Robocorp CLI (`rcc`)** (for main phase): download [rcc.exe](https://robocorp.com/docs/rcc/installation)
 
