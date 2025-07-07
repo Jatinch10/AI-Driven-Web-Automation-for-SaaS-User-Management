@@ -1,0 +1,15 @@
+tasks:
+  Run Agent:
+    shell: python -m tasks run_agent
+
+condaConfigFile: conda.yaml
+
+artifactsDir: output
+logFile: output/log.html
+
+PATH:
+  - .
+PYTHONPATH:
+  - .
+environment:
+  DOTENV_PATH: .env
