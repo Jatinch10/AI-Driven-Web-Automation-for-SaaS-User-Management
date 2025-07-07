@@ -19,15 +19,15 @@ async def scrape_users_and_manage():
 
         # await page.wait_for_selector("form", timeout=10000)
         username_sel = locate_selector(html, "username")      
-        # await page.fill('input[id="username-uid1"]', "lavel89909@dxirl.com")
-        await page.fill(username_sel, "lavel89909@dxirl.com")
+        # await page.fill('input[id="username-uid1"]', "example@mail.com")
+        await page.fill(username_sel, "example@mail.com")
         button_sel = locate_selector(html, "login")
         # await page.click('button#login-submit')
         await page.click(button_sel)
         await page.wait_for_timeout(3000)
 
         pass_sel = locate_selector(html, "password")
-        await page.fill(pass_sel, "JcHn1111")
+        await page.fill(pass_sel, "PASSWORD")
         submit_sel = locate_selector(html, "submit")
         await page.click(submit_sel)
         await page.wait_for_timeout(2000)
@@ -39,7 +39,7 @@ async def scrape_users_and_manage():
         html = await page.content() 
         print(html)
 
-        await page.goto("https://trello.com/w/lavelsworkspace/members")  
+        await page.goto("https://trello.com/w/workspace/members") #Your Workspace link  
 
         await page.wait_for_load_state('networkidle')
 
@@ -64,12 +64,10 @@ async def scrape_users_and_manage():
         #     photo_div = await card.query_selector('div[title]')
         #     if not photo_div:
         #         continue
-
-        #     # get the full title, e.g. "Lavel (lavel89909)"
+        
         #     title_attr = await photo_div.get_attribute("title")
 
         #     # extract just the username inside the parentheses
-        #     # e.g. from "Lavel (lavel89909)" → "lavel89909"
         #     import re
         #     m = re.search(r'\(([^)]+)\)', title_attr or "")
         #     username = m.group(1) if m else title_attr
@@ -82,7 +80,7 @@ async def scrape_users_and_manage():
         print(df)
 
         await page.click('button.Hm2Njssed7t23i.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.SEj5vUdI3VvxDc')
-        await page.fill('input[data-testid="add-members-input"]', 'rakohi5975@bulmp3.com')
+        await page.fill('input[data-testid="add-members-input"]', 'example@mail.com')
         await page.keyboard.press("Enter")
         await page.click('button.C71gijCMxUFbvL.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.PnEv2xIWy3eSui.SEj5vUdI3VvxDc')
 
